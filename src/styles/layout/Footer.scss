@@ -1,0 +1,147 @@
+@use '../variables' as *;
+
+.footer {
+  background-color: $primary-color;
+  color: white;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.footer-section {
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  p {
+    color: rgba(white, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(white, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $secondary-color;
+      transform: translateY(-3px);
+    }
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.footer-section {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.8rem;
+
+      a {
+        color: rgba(white, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  &.contact-info {
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      color: rgba(white, 0.8);
+
+      i {
+        margin-top: 0.3rem;
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  background-color: darken($primary-color, 5%);
+  padding: 1.5rem 2rem;
+}
+
+.footer-bottom-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(white, 0.8);
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      color: rgba(white, 0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 1rem;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+
+    .footer-links {
+      justify-content: center;
+    }
+  }
+}
+
+// Add your footer styles here 
