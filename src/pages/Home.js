@@ -3,38 +3,44 @@ import { Link } from 'react-router-dom';
 import mockProducts from '../data/products';
 import Carousel from '../common/Carousel';
 import SofaSetCard from '../components/SofaSet/SofaSetCard';
-import "./Home.scss";
+import './Home.scss';
+
+// ✅ Import local images
+import bedImg from '../assets/images/bed.jpeg';
+import sofaImg from '../assets/images/sofa.jpeg';
+import chairImg from '../assets/images/chair.jpeg';
+import tableImg from '../assets/images/table.jpeg';
 
 const Home = () => {
-  // Filter products by category for each section
+  // Filter products by category
   const bedProducts = mockProducts.filter(p => p.category === 'Beds').slice(0, 8);
   const sofaProducts = mockProducts.filter(p => p.category === 'Sofa Sets').slice(0, 8);
-  const hotProducts = mockProducts.slice(0, 8); // Example: first 8 as hot selling
+  const hotProducts = mockProducts.slice(0, 8);
 
-  // Use bright, minimal, high-quality Unsplash images for each category
+  // ✅ Use local images in featured categories
   const featuredCategories = [
     {
       id: 'beds',
       name: 'Beds',
-      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
+      image: bedImg,
       count: bedProducts.length
     },
     {
       id: 'sofas',
       name: 'Sofa Sets',
-      image: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80',
+      image: sofaImg,
       count: sofaProducts.length
     },
     {
       id: 'chairs',
       name: 'Chairs',
-      image: 'https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80',
+      image: chairImg,
       count: mockProducts.filter(p => p.category === 'Chairs').length
     },
     {
       id: 'tables',
       name: 'Tables',
-      image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80',
+      image: tableImg,
       count: mockProducts.filter(p => p.category === 'Tables & Dining').length
     }
   ];
@@ -42,6 +48,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="home-container">
+        {/* Featured Categories */}
         <section className="featured-categories exact-category-design">
           <h2>Shop by Category</h2>
           <div className="categories-grid exact-category-grid">
@@ -62,6 +69,8 @@ const Home = () => {
             ))}
           </div>
         </section>
+
+        {/* Carousels */}
         <div className="carousel-group">
           <Carousel
             items={bedProducts}
@@ -87,4 +96,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;

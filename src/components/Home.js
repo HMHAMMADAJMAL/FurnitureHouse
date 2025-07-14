@@ -3,32 +3,17 @@ import { Link } from 'react-router-dom';
 // import '../styles/components/Home.scss';
 import "../styles/components/Home.scss"
 
+import bedImg from '../assets/images/bed.jpeg';
+import sofaImg from '../assets/images/sofa.jpeg';
+import chairImg from '../assets/images/chair.jpeg';
+import tableImg from '../assets/images/table.jpeg';
+
 const Home = () => {
   const featuredCategories = [
-    {
-      id: 'beds',
-      name: 'Beds',
-      image: 'https://images.unsplash.com/photo-1505693314120-0d443867891c',
-      count: 24
-    },
-    {
-      id: 'sofas',
-      name: 'Sofa Sets',
-      image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc',
-      count: 18
-    },
-    {
-      id: 'chairs',
-      name: 'Chairs',
-      image: 'https://images.unsplash.com/photo-1503602642458-232111445657',
-      count: 32
-    },
-    {
-      id: 'tables',
-      name: 'Tables',
-      image: 'https://images.unsplash.com/photo-1505693314120-0d443867891c',
-      count: 15
-    }
+    { id: 'beds', name: 'Beds', image: bedImg, count: 24 },
+    { id: 'sofas', name: 'Sofa Sets', image: sofaImg, count: 18 },
+    { id: 'chairs', name: 'Chairs', image: chairImg, count: 32 },
+    { id: 'tables', name: 'Tables', image: tableImg, count: 15 },
   ];
 
   return (
