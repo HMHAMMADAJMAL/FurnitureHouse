@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ProductList from './components/SofaSet/SofaSetList';
 import ProductDetail from './components/SofaSet/SofaSetDetail';
 import PaymentPage from './pages/PaymentPage';
+import ContactUs from './pages/ContactUs';
 import './styles/App.scss';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
               <Route path="/category/:categoryId" element={<ProductList />} />
               <Route path="/product/:productId" element={<ProductDetail />} />
               <Route path="/payment" element={<PaymentPage />} />
+              <Route path="/contact" element={<ContactUs />} />
             </Routes>
           </main>
         </div>
